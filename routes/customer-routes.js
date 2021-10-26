@@ -1,4 +1,6 @@
 const express = require("express");
+
+
 const {
   getAllCustomers,
   getAddCustomerView,
@@ -9,8 +11,8 @@ const {
   deleteCustomer,
 } = require("../controllers/customerController");
 
-const router = express.Router();
 
+const router = express.Router();
 router.get("/", getAllCustomers);
 router.get("/addCustomer", getAddCustomerView);
 router.post("/addCustomer", addCustomer);

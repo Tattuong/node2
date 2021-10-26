@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-8">
+                <h4 class="font-weight-bold" style="color: white;">Manage Employees</h4>
+            </div>
+            <div class="col-4 but">
+                <a href="/addCustomer" class="btn btn-success float-right"><i class="fa fa-plus mr-1"></i>Add New</a>
+           
+                <a href="/deleteCustomer" class="btn btn-danger float-right"><i class="bi bi-x-circle"></i> Delete</a>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        <span class="custom-checkbox">
+                            <input type="checkbox" onchange="checkAllUsers()" id="selectAll" class="main">
+                            <label for="selectAll"></label>
+                        </span>
+                    </th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if(customers.length > 0) { %>
+                <% for(let customer of customers) { %>
+                <tr>
+                    <td>
+                        <span class="custom-checkbox">
+                            <input type="checkbox" id="checkbox1${user.id}" name="options[]" value="1">
+                            <label for="checkbox1"></label>
+                        </span>
+                    </td>
+                    <th scope="row"><%= customer.name %>
+                    <td><%= customer.email %></td>
+                    <td><%= customer.address %></td>
+                    <td><%= customer.phone %></td>
+                    <td>
+                        <a href="/updateCustomer/<%= customer._id %>" class="btn-edit"><i class="bi bi-pencil-fill"
+                                data-toggle="modal" title="Edit" style="font-size: 20px; color:#FFC107;"></i></a>
+                        <a href="/deleteCustomer/<%= customer._id %>" class="btn-del"><i class="bi bi-trash-fill"
+                                data-toggle="tooltip" title="Delete" style="font-size: 20px; color:red"></i></a>
+                    </td>
+                </tr>
+                <% } %>
+                <% } else { %>
+                <tr>
+                    <td>No data found</td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -2,6 +2,7 @@ const { Customer, validate } = require("../models/customer");
 
 const getAllCustomers = async (req, res, next) => {
   const list = await Customer.find().exec();
+  
   res.render("customerlist", {
     customers: list,
   });
@@ -84,12 +85,31 @@ const deleteCustomer = async (req, res, next) => {
 };
 
 
+// const checkAllUsers = () => {
+//   const checkboxValue = document.getElementById("selectAll").checked;
+//   console.log(checkboxValue);
+//   if (checkboxValue) {
+//     listSelectedUser = getAllCustomers.map((list) => list.id);
+//   } else {
+//     listSelectedUser = [];
+//   }
+// };
 
-const DeleteAllCustom = async (req, res, next ) =>{ 
-    const id = req.params.id
-    const customer = await Customer.findOneAndRemove(id);
-    if (!customer) return res.status(404).send("not found")
-}
+// checkAllUsers()
+
+
+// const DeleteAllCustom = async (req, res, next ) =>{ 
+//     const id = req.params.id
+//     const customer = await Customer.findOneAndRemove(id);
+//     if (!customer) return res.status(404).send("not found")
+// }
+
+// const getpagination = {page, size} => {
+// }
+
+
+
+
 
 module.exports = {
   getAllCustomers,

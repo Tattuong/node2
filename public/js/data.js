@@ -1,9 +1,7 @@
 // // render users
-// const url = "http://localhost:3000/api/products";
-
 // const addModalForm = document.querySelector(".form-user");
 // const editModalForm = document.querySelector("#editModal .form-user");
-// const deleteModalForm = document.querySelector("#deleteModal .form-user");
+// const deleteModalForm = document.querySelector("#deleteModal .card-header");
 // const tableUsers = document.querySelector("#table-user");
 
 
@@ -12,16 +10,15 @@
 // let listSelectedUser = [];
 // let listUsers = [];
 
-// const addListSelected = (value) => {
-//   const checkboxValue = document.getElementById(`checkbox1${value}`).checked;
+// const addListSelected = (customer) => {
+//   const checkboxValue = document.getElementById(`checkbox1${customer}`).checked;
 //   if (checkboxValue) {
 //     listSelectedUser = listSelectedUser.concat(value);
 //     console.log("data", value);
 //   } else {
-//     listSelectedUser = listSelectedUser.filter((user) => user !== value);
+//     listSelectedUser = listSelectedUser.filter((customer) => customer !== value);
 //   }
 // };
-
 
 // const checkAllUsers = () => {
 //   console.log(listUsers);
@@ -34,20 +31,21 @@
 //     listSelectedUser = [];
 //   }
 // };
+
+
 // //deleteUserCheckbox
 
 
 // const deleteAllUsers = () => {
 //   console.log(listSelectedUser);
-//   listSelectedUser.map((userId) => {
-//     fetch(`${url}/${userId}`, {
+//   listSelectedUser.map((customer) => {
+//     fetch(`${id}/${customer}`, {
 //       method: "DELETE",
 //     })
 //       .then((res) => res.json())
 //       .then(() => fetchUsers());
 //   });
 // };
-
 
 // const fetchUsers = () => {
 //   fetch(url)
@@ -97,7 +95,6 @@
 //     e.preventDefault();
 //     id = user.id;
 //     $("#editModal").modal("show");
-
 //       editModalForm.name.value = user.name,
 //       editModalForm.email.value = user.email,
 //       editModalForm.address.value = user.address,

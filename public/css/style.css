@@ -1,3 +1,8 @@
+*{
+	font-family: 'Times New Roman', Times, serif, Helvetica, sans-serif;
+	line-height: 1.4;
+}
+
 body {
 	color: #566787;
 	background: #f5f5f5;
@@ -313,7 +318,10 @@ table.table .avatar {
 
 
 .but{
-	display: flow-root;
+	display: flex;
+	justify-content: flex-end
+
+
 }
 .but2{
 	margin-left: 200px;
@@ -322,6 +330,9 @@ table.table .avatar {
 .but a{
 	margin-right: 10px;
 }
+/* .but button{
+	margin-left: 140px;
+} */
 .col-form-label{
 	font-size: 16px;
 	color: rgb(32, 31, 31);
@@ -339,4 +350,8 @@ table.table .avatar {
 }
 .modal-header{
 align-items: center;	height: 100px;
+}
+.modal-header .close {
+	color: black;
+	margin-bottom: 40px;
 }

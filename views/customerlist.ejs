@@ -1,13 +1,37 @@
 <div class="container">
     <div class="card-header">
         <div class="row">
-            <div class="col-7">
+            <div class="col-6">
                 <h4 class="font-weight-bold" style="color: white;">Manage Employees</h4>
             </div>
-            <div class="col-5 but">
-                <a href="/addCustomer" class="btn btn-success float-right"><i class="fa fa-plus mr-1"></i>Add New Employees</a>
-           
-                <a href="/deleteCustomer" class="btn btn-danger float-right"><i class="bi bi-x-circle"></i> Delete</a>
+            <div class="col-6 but">
+                <a href="/addCustomer" class="btn btn-success float-right"><i class="fa fa-plus mr-1"></i>Add New
+                    Employees</a>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal"><i
+                        class="bi bi-x-circle"></i>
+                    Delete
+                </button>
+            </div>
+            <div id="deleteModal" class="modal-fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form class="animate form-user">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Delete Employee</h4>
+                                <button type="button" class="close" data-dismiss="modal"
+                                    aria-hidden="true">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Are you sure you want to delete these Records?</p>
+                                <p class="text-warning"><small>This action cannot be undone.</small></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button onclick="deleteAllUsers()" class="btn btn-danger" value="Delete">Delete</button>
+                                <a href="/" class="btn btn-light">Cancel</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -32,9 +56,9 @@
                 <% if(customers.length > 0) { %>
                 <% for(let customer of customers) { %>
                 <tr>
-                    <td>
+                   <td>
                         <span class="custom-checkbox">
-                            <input type="checkbox" id="checkbox1${user.id}" name="options[]" value="1">
+                            <input onchange="addListSelected()" type="checkbox" id="checkbox1${customer.id}" name="options[]" value="1">
                             <label for="checkbox1"></label>
                         </span>
                     </td>

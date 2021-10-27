@@ -20,8 +20,8 @@
                 <div class="col-12">
                     <div class="form-group">
                         <label class="col-form-label" for="address">Address</label>
-                        <input class="form-control" name="address" id="address" rows="3">
-                        <%= customer.address %>
+                        <input type="text" class="form-control" value="<%= customer.address %>"  name="address" id="address" rows="3">
+                        
                         
                     </div>
                 </div>
@@ -38,4 +38,24 @@
             </div>
         </form>
     </div>
+    <div id="deleteModal" class="modal-fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form class="animate form-user">
+					<div class="modal-header">
+						<h4 class="modal-title">Delete Employee</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">
+						<p>Are you sure you want to delete these Records?</p>
+						<p class="text-warning"><small>This action cannot be undone.</small></p>
+					</div>
+					<div class="modal-footer">
+						<button onclick="deleteAllUsers()" class="btn btn-danger" value="Delete"> delete
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
 </div>

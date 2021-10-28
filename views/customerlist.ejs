@@ -26,7 +26,7 @@
                                 <p class="text-warning"><small>This action cannot be undone.</small></p>
                             </div>
                             <div class="modal-footer">
-                                <button onclick="deleteAllUsers()" class="btn btn-danger" value="Delete">Delete</button>
+                                <button onclick="deleteAllCustomer()" class="btn btn-danger" value="Delete">Delete</button>
                                 <a href="/" class="btn btn-light">Cancel</a>
                             </div>
                         </form>
@@ -58,7 +58,7 @@
                 <tr>
                    <td>
                         <span class="custom-checkbox">
-                            <input onchange="addListSelected()" type="checkbox" id="checkbox1${customer.id}" name="options[]" value="1">
+                            <input class="checkbox-cus" type="checkbox" id="cus-<%= customer._id %>" name="options[]" value="1">
                             <label for="checkbox1"></label>
                         </span>
                     </td>
@@ -69,9 +69,11 @@
                     <td>
                         <a href="/updateCustomer/<%= customer._id %>" class="btn-edit"><i class="bi bi-pencil-fill"
                                 data-toggle="modal" title="Edit" style="font-size: 20px; color:#FFC107;"></i></a>
-                        <a href="/deleteCustomer/<%= customer._id %>" class="btn-del"><i class="bi bi-trash-fill"
-                                data-toggle="tooltip" title="Delete" style="font-size: 20px; color:red"></i></a>
-                    </td>
+                        <!-- <a href="/deleteCustomer/<%= customer._id %>" class="btn-del"><i class="bi bi-trash-fill"
+                                data-toggle="tooltip" title="Delete" style="font-size: 20px; color:red"></i></a> -->
+                        <a href="/<%= customer._id %>" id="<%= customer._id %>" style="font-size: 20px; color:red" class="btn-del" data-toggle="modal" data-target="#deleteModal"><i class="bi bi-trash-fill"></i>
+                        </a>                       
+                        </td>
                 </tr>
                 <% } %>
                 <% } else { %>

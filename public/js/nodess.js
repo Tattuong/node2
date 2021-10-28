@@ -1,25 +1,30 @@
-let id = "";
 let listSelectedUser = [];
-let listUsers = [];
 
-const addListSelected = (customer) => {
-  const checkboxValue = document.getElementById(`checkbox1${customer}`).checked;
-  if (checkboxValue) {
-    listSelectedUser = listSelectedUser.concat(value);
-    console.log("data", value);
-  } else {
-    listSelectedUser = listSelectedUser.filter((customer) => customer !== value);
-  }
-};
 
-const checkAllUsers = () => {
-  console.log(listUsers);
+const deleteModalForm = document.querySelector("#deleteModal")
+const listCheckbox = document.getElementsByClassName("checkbox-cus");
 
-  const checkboxValue = document.getElementById("selectAll").checked;
-  console.log(checkboxValue);
-  if (checkboxValue) {
-    listSelectedUser = listUsers.map((user) => user.id);
-  } else {
-    listSelectedUser = [];
-  }
-};
+// console.log('listCheckbox', listCheckbox);
+
+Array.from(listCheckbox).forEach(checkbox => {
+    checkbox.addEventListener('change', (e) => {
+        console.log(e.target.id, e.target.checked);
+        if (e.target.checked) {
+            listSelectedUser.push(e.target.id)
+        } else {
+            listSelectedUser = listSelectedUser.filter(id => id !== e.target.id)
+        }
+        console.log('listSelectedUser', listSelectedUser);
+    })
+});
+
+
+// function deleteAllCustomer(){
+
+// }
+ const deleteAllCustomer = () =>{
+    
+ }
+
+
+

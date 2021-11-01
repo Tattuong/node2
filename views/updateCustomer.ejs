@@ -1,0 +1,61 @@
+<div class="card">
+    <div class="card-header">
+        <h4 class="font-weight-bold">Edit Employees</h4>
+    </div>
+    <div class="card-body">
+        <form action="/updateCustomer/<%= customer._id %>" method="post">
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label class="col-form-label" for="name">Name</label>
+                        <input type="text" class="form-control" value="<%= customer.name %>" name="name" placeholder="name" id="name">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group">
+                        <label class="col-form-label" for="email">Email</label>
+                        <input type="text" class="form-control" value="<%= customer.email %>" name="email" placeholder="email" id="email">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group">
+                        <label class="col-form-label" for="address">Address</label>
+                        <input type="text" class="form-control" value="<%= customer.address %>"  name="address" id="address" rows="3">
+                        
+                        
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group">
+                        <label class="col-form-label" for="phone">Phone</label>
+                        <input type="number" class="form-control" value="<%= customer.phone %>" name="phone" placeholder="enter your phone number" id="phone">
+                    </div>
+                </div>
+            </div>
+            <div class="float-right">
+                <button type="submit" class="btn btn-danger">Update</button>
+                <a href="/" class="btn btn-light">Cancel</a>
+            </div>
+        </form>
+    </div>
+    <div id="deleteModal" class="modal-fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form class="animate form-user">
+					<div class="modal-header">
+						<h4 class="modal-title">Delete Employee</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">
+						<p>Are you sure you want to delete these Records?</p>
+						<p class="text-warning"><small>This action cannot be undone.</small></p>
+					</div>
+					<div class="modal-footer">
+						<button onclick="deleteAllUsers()" class="btn btn-danger" value="Delete"> delete
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</div>

@@ -18,16 +18,11 @@ Array.from(listCheckbox).forEach(checkbox => {
     })
 });
 
-
 const deleteCustomer = document.getElementById("deleteBtn")
 deleteCustomer.addEventListener('click', (e) => {
     console.log('delete');
-    listSelectedUser = listSelectedUser.map((listSelectedUser) => {
+    listSelectedUser = listSelectedUser.map(() => { 
         return listSelectedUser ;
     })
     console.log(listSelectedUser);
 })
-
-
-
-

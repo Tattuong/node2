@@ -1,5 +1,5 @@
 const { Customer, validate } = require("../models/customer");
-
+  
 const getAllCustomers = async (req, res, next) => {
   const list = await Customer.find().exec();
   
@@ -8,10 +8,10 @@ const getAllCustomers = async (req, res, next) => {
   });
 };
 
+
 const getAddCustomerView = (req, res, next) => {
   res.render("addCustomer");
 };
-
 
 const addCustomer = async (req, res, next) => {
   const { error } = validate(req.body);
@@ -27,7 +27,6 @@ const addCustomer = async (req, res, next) => {
   customer = await customer.save();
   res.redirect("/");
 };
-
 
 const getUpdateCustomerView = async (req, res, next) => {
   try {
@@ -77,12 +76,16 @@ const deleteCustomer = async (req, res, next) => {
   try {
     const id = req.params.id;
     const customer = await Customer.findByIdAndRemove(id);
-    if (!customer) return res.status(404).send("not found");
+    if (!customer) return res.status(404).send("not  found");
     res.redirect("/");
   } catch (error) {
     res.status(400).send(error.message);
   }
 };
+
+
+
+
 
 
 // const checkAllUsers = () => {
